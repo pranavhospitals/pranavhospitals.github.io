@@ -1,0 +1,17 @@
+Senior Consultant - Done
+	- DR. T. SRINIVASAN, M.D.,D.C.H.,
+	- DR. MURUGAPANDIYAN M.D.,D.M (CARDIOLOGIST)
+
+Medical Team - Card Layout - Done
+
+Add appointment number - Done
+
+Add Emergency/ambulance numbers - Done
+
+Add contact numbers to address footer - Done
+
+Add feedback form page - Send to hospital mail id - Done
+
+Add copyright footer - Done
+
+Add reviews to hospital

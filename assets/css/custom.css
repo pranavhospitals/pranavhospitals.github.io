@@ -1,0 +1,187 @@
+body{
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.navbar-main{
+	height: 130px;
+}
+
+.nav-info{
+	background-color : #fff!important;
+}
+
+.navbar .nav-link{
+	color: #9DA2A5 !important;
+}
+
+.nav-content{
+	min-height : 50px;
+	background-color: #458C00;
+}
+
+.nav-content-div .nav-link{
+	color: #fff !important;
+}
+
+.header{
+	font-weight: bolder;
+    color: #D8251B;
+}
+
+.tagline{
+	font-size: 11px;
+    color: #9DA2A5;
+    font-weight: bold;
+}
+
+.resize_image{
+ width: 130px;
+ height:130px;
+}
+
+.hospital_image{
+ width: 100%;
+ max-height:100%;
+ object-fit: cover;
+}
+
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+  display: flex;
+}
+
+.carouselItemCustom{
+	width: 100%;
+	height: 500px;
+}
+
+.nav-content-div a{
+	font-weight: bold;
+}
+
+.cutom-col-1{
+	max-width: 6.3%;
+}
+
+.gallery_cont li{
+	border: 1px solid white;
+}
+
+.gallery_cont a.active{
+	background-color: #458C00 !important;
+}
+
+.gallery_cont a{
+	background: #333333;
+	border-radius: 0 !important;
+	color: white;
+}
+
+#pills-tabContent{
+	min-height: 300px;
+	max-height: 600px;
+	overflow-y: scroll;
+	background: #f8f9fa;
+}
+
+.gallery-img-tag{
+	width: 18rem;
+	height: 200px;
+}
+
+.webicons{
+	width: 40px;
+	height: 40px;
+}
+
+.location_cont{
+	background: rgba(51,51,51, 0.7);
+}
+
+.navbarDropdown{
+	background-color: #333333;
+	left: auto;
+	right: auto;
+	margin-top: 0px !important;
+    border: 0;
+    border-radius: 0;
+}
+
+.navHeight{
+	height: 50px;
+}
+
+.navHeight li.show{
+	height: 100%;
+    padding-top: 7px;
+    background: #333333;
+}
+
+.navHeight li.show a{
+	color: white !important;
+}
+
+.navbarDropdown .dropdown-header{
+	color: #458C00 !important;
+	font-weight: bolder;
+	font-size: 1rem !important;
+}
+
+.navbarDropdown .dropdown-item:hover{
+	color: #458C00 !important;
+}
+
+.contactDetailsBorder{
+	border-top: 1px solid rgba(157,162,165, 0.3);
+}
+
+.alignLeft{
+	overflow-y: scroll;
+	max-height: 505px;
+	width: 58%;
+}
+
+.doctors_pic{
+	width: 140px;
+	height: 140px;
+}
+
+.doctors_card{
+	background: white;
+	min-height: 125px;
+	max-width: 350px;
+}
+
+.d_name{
+	color: #458C00;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.d_deg{
+	color: #9DA2A5;
+    font-size: 12px;
+}
+
+.d_desg{
+	color: #9DA2A5;
+    font-size: 12px;
+}
+
+.feedback_input{
+	width: 100%;
+	height: 50px;
+}
+
+#feedback_message{
+	min-height: 90px;
+}
+
+.d_footer{
+	background: #458C00;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+}
