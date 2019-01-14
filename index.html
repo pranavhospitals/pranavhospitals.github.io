@@ -116,11 +116,14 @@
               HOME
             </a>
             <div class="dropdown-menu navbarDropdown" aria-labelledby="navbarDropdown">
-              <h6 class="dropdown-header">VISION</h6>
+              <h6 class="dropdown-header">PRANAV HOSPITAL</h6>
               <a class="dropdown-item" href="#">ADDING HEALTHY YEARS TO QUALITY LIFE</a>
               <div class="dropdown-divider"></div>
-              <h6 class="dropdown-header">MISSION</h6>
-              <a class="dropdown-item" href="#">KNOWLEDGE, TEAM WORK, DEDICATION, DELIVERANCE TO THE SOCIETY</a>
+              <h6 class="dropdown-header">DIRECTORS</h6>
+              <div id="directors_dropdown"></div>
+              <div class="dropdown-divider"></div>
+              <h6 class="dropdown-header">ADMINISTRATIVE TEAM</h6>
+              <a class="dropdown-item" href="#"></a>
             </div>
           </li>
           <li class="nav-item mx-4 align-self-center" id="doctors_dropdown"></li>
@@ -305,7 +308,7 @@
 
     <script type="text/template" id="gallery">
       <% _.each(images, function(image){ %>
-        <div class="card pull-left m-2">
+        <div class="card float-left m-2">
           <img class="gallery-img-tag" src="assets/hospital_images/<%- image %>" alt="<%- image %>">
         </div>
       <% }); %>
@@ -322,9 +325,9 @@
             <% if(mod == 0){ %>
               <div class="row m-0">
             <% } %>
-            <div class="col-6 p-0" id="<%- mod %>">
+            <div class="col-6 p-0 doctorsTag" id="<%- val['tag'] %>">
               <div class="row m-2 p-1 doctors_card">
-                <div class="col-5 pull-left p-0">
+                <div class="col-5 float-left p-0">
                   <img class="doctors_pic" src="<%- val['img'] %>" />
                 </div>
                 <div class="col-7">
@@ -348,27 +351,58 @@
       <% } %>
     </script>
 
+    <script type="text/template" id="directorsDropdown">
+      <div>
+        <% _.each(values, function(val, index){ %>
+          <% var mod = index%2; %>
+          <% if(mod == 0){ %>
+            <div class="row m-0">
+          <% } %>
+          <div class="col-6 p-0 directorsTag" id="<%- val['tag'] %>">
+            <div class="row m-2 p-1 doctors_card">
+              <div class="col-5 float-left p-0">
+                <img class="doctors_pic" src="<%- val['img'] %>" />
+              </div>
+              <div class="col-7">
+                <div class="d_name mb-2"><%- val['name'] %></div>
+                <div class="d_deg mb-2"><%- val['deg'] %></div>
+                <div class="d_desg mb-1"><%- val['desg'] %></div>
+              </div>
+            </div>
+          </div>
+          <% if(mod == 1){ %>
+            </div>
+          <% } %>
+        <% }); %>
+      </div>
+    </script>
+
     <script type="text/javascript">
       $(document).ready(function(){
         var hospital_images = ['front.jpg', 'waiting_area.jpg', 'Reception.jpg', 'staff.jpg', 'Casualty.jpg',
           'Dental.jpg', 'Endoscopy.jpg', 'ICU.jpg', 'I floor room.jpg', 'II floor room.jpg', 'Lab.jpg',
-          'Labour room.jpg', 'NICU.jpg', 'OT.jpg', 'Pharmacy.jpg', 'Scan room.jpg', 'Xray.jpg'];
+          'Lab_1.jpg', 'Lab_2.jpg', 'Labour room.jpg', 'NICU.jpg', 'OT.jpg', 'Pharmacy.jpg', 'Scan room.jpg', 'Xray.jpg'];
 
-        var doctors = [{'name': 'Dr.S.MURUGAPANDIYAN', 'deg': 'M.D., D.M.,', 'desg': 'SENIOR CARDIOLOGIST', 'img':'assets/images/DoctorImages/Dr.SMP.jpg'},
+        var doctors = [{'name': 'Dr.S.MURUGAPANDIYAN', 'deg': 'M.D., D.M.,', 'desg': 'SENIOR CARDIOLOGIST', 'img':'../assets/images/DoctorImages/Dr.SMP.jpg', 'tag': 'murugapandiyan'},
             {'name': 'Dr.T.SRINIVASAN', 'deg': 'M.D., D.C.H.,', 'desg': 'SENIOR PAEDIATRICIAN & NEONATALOGIST',
-            'img':'assets/images/pranav_logo.jpg'}, {'name': 'Dr.M.PREETHI', 'deg': 'M.S.,', 'desg': 'OBSTETRICS AND GYNAECOLOGIST', 'img':'assets/images/DoctorImages/Dr.preethi.jpg'},
-            {'name': 'Dr.S.SAMYUKTHA', 'deg': 'M.D.S.,', 'desg': 'ORTHODONTIST', 'img':'assets/images/pranav_logo.jpg'}, {'name': 'Dr.J.SATHEESH', 'deg': 'M.S., D.N.B., M.CH.,', 'desg': 'SURGICAL GASTROENTEROLOGIST', 'img':'assets/images/pranav_logo.jpg'},
-            {'name': 'Dr.J.MARAGATHA MEENAKSHI', 'deg': 'M.B.B.S., D.G.O.,', 'desg': 'OBSTETRICS AND GYNAECOLOGIST', 'img':'assets/images/pranav_logo.jpg'}, {'name': 'Dr.R.RAVICHANDRAN', 'deg': 'M.S., M.CH.,', 'desg': 'PAEDIATRIC SURGEON', 'img':'assets/images/pranav_logo.jpg'}, {'name': 'Dr.G.RAVISHANKAR', 'deg': 'M.S., D.ORTHO., DNB (ORTHO)., MNAMS', 'desg' : 'ORTHOPAEDIC SURGEON', 'img':'assets/images/DoctorImages/Dr.GRS.jpg'},
-            {'name': 'Dr.M.I.SHARMILA BANU', 'deg': 'M.B.B.S', 'desg': 'SONOLOGIST (SCAN)', 'img':'assets/images/DoctorImages/Dr.sharmilabanu.jpg'},
-            {'name': 'Dr.M.KARTHIKEYAN', 'deg': 'M.D (Anes)', 'desg': 'ANESTHESIOLOGIST', 'img':'assets/images/pranav_logo.jpg'},
-            {'name': 'Dr. SURESH', 'deg': 'M.S', 'desg': 'ORTHOPAEDIC SURGEON', 'img':'assets/images/pranav_logo.jpg'},
-            {'name': 'Dr.S. PRABHAKAR', 'deg': 'M.S., M.CH., D.N.B.,', 'desg': 'UROLOGIST', 'img':'assets/images/pranav_logo.jpg'},
-            {'name': 'Dr. VINOTH', 'deg': 'M.D., M.E.M.,', 'desg': 'EMERGENCY CRITICAL', 'img':'assets/images/pranav_logo.jpg'}];
+            'img':'../assets/images/DoctorImages/Dr.SRINIVASAN.jpeg', 'tag': 'srinivasan'}, {'name': 'Dr.M.PREETHI', 'deg': 'M.S.,', 'desg': 'OBSTETRICS AND GYNAECOLOGIST', 'img':'../assets/images/DoctorImages/Dr.preethi.jpg', 'tag': 'preethi'},
+            {'name': 'Dr.S.SAMYUKTHA', 'deg': 'M.D.S.,', 'desg': 'ORTHODONTIST', 'img':'../assets/images/DoctorImages/DR.SAMYUKTHA.jpg', 'tag': 'samyuktha'}, {'name': 'Dr.J.SATHEESH', 'deg': 'M.S., D.N.B., M.CH.,', 'desg': 'SURGICAL GASTROENTEROLOGIST', 'img':'../assets/images/DoctorImages/Dr.Sathish.jpeg', 'tag': 'satheesh'},
+            {'name': 'Dr.J.MARAGATHA MEENAKSHI', 'deg': 'M.B.B.S., D.G.O.,', 'desg': 'OBSTETRICS AND GYNAECOLOGIST', 'img':'../assets/images/DoctorImages/Dr.MARAGATHA_MEENAKSHI.jpg', 'tag': 'meenakshi'}, {'name': 'Dr.R.RAVICHANDRAN', 'deg': 'M.S., M.CH.,', 'desg': 'PAEDIATRIC SURGEON', 'img':'../assets/images/DoctorImages/Dr.Ravichandran.jpg', 'tag': 'ravichandran'}, {'name': 'Dr.G.RAVISHANKAR', 'deg': 'M.S., D.ORTHO., DNB (ORTHO)., MNAMS', 'desg' : 'ORTHOPAEDIC SURGEON', 'img':'../assets/images/DoctorImages/Dr.GRS.jpg', 'tag': 'ravishankar'},
+            {'name': 'Dr.M.I.SHARMILA BANU', 'deg': 'M.B.B.S', 'desg': 'SONOLOGIST (SCAN)', 'img':'../assets/images/DoctorImages/Dr.sharmilabanu.jpg', 'tag': 'sharmilabanu'},
+            {'name': 'Dr.M.KARTHIKEYAN', 'deg': 'M.D (Anes)', 'desg': 'ANAESTHETIST', 'img':'../assets/images/DoctorImages/Dr.karthikeyan.jpg', 'tag': 'karthikeyan'},
+            {'name': 'Dr. SURESH', 'deg': 'M.S', 'desg': 'ORTHOPAEDIC SURGEON', 'img':'../assets/images/DoctorImages/Dr.Suresh.JPG', 'tag': 'suresh'},
+            {'name': 'Dr.S. PRABHAKAR', 'deg': 'M.S., M.CH., D.N.B.,', 'desg': 'UROLOGIST', 'img':'../assets/images/DoctorImages/Dr.S.Prabhakaran.jpeg', 'tag': 'prabhakar'},
+            {'name': 'Dr. VINOTH', 'deg': 'M.D., M.E.M.,', 'desg': 'EMERGENCY CRITICAL', 'img':'../assets/images/DoctorImages/Dr.Vinod.jpeg', 'tag': 'vinoth'},
+            {'name': 'Dr.R.DINESH PRABHU', 'deg': 'M.D., Resp. Med.,', 'desg': 'CONSULTANT PULMONOLOGIST', 'img':'../assets/images/DoctorImages/DR.DINESH_PRABHU.jpg', 'tag': 'dinesh'}];
 
         var departments = ['ANESTHESIA', 'CARDIOLOGY', 'CRITICAL CARE', 'DENTAL', 'DIABETOLOGY', 'GASTRO ENTEROLOGY', 'GASTRO INTESTINAL SURGERY', 'GENERAL MEDICINE', 'OBSTETRIC AND GYNACOLOGY', 'ORTHOPAEDIC MEDICINE', 'PAEDIATRIC', 'SONOLOGY', 'UROLOGY', 'SURGICAL ONCOLOGY'];
 
         var services = ['ACCIDENT AND EMERGENCY CARE', 'LABORATORY', 'PHARMACY', 'AMBULANCE', 'ICU AND NICU',
           'X-RAY'];
+
+        var directors = [{'name': 'Dr.S.MURUGAPANDIYAN', 'deg': 'M.D., D.M.,', 'desg': 'SENIOR CARDIOLOGIST', 'img':'assets/images/DoctorImages/Dr.SMP.jpg', 'tag': 'murugapandiyan'},
+            {'name': 'Dr.T.SRINIVASAN', 'deg': 'M.D., D.C.H.,', 'desg': 'SENIOR PAEDIATRICIAN & NEONATALOGIST',
+            'img':'assets/images/DoctorImages/Dr.SRINIVASAN.jpeg', 'tag': 'srinivasan'}];
 
         var carouselInnerTmpl = _.template($('#carouselInner').html());
         var carouselInner = carouselInnerTmpl({'images': hospital_images});
@@ -382,6 +416,10 @@
         var gallery = galleryTmpl({'images': hospital_images});
         $('#pills-gallery').html(gallery);
 
+        var directorsDropdownTmpl = _.template($('#directorsDropdown').html());
+        directorsDropdown = directorsDropdownTmpl({'values': directors});
+        $('#directors_dropdown').html(directorsDropdown);
+
         var navMainDropdownTmpl = _.template($('#navMainDropdown').html());
         var navMainDropdown = navMainDropdownTmpl({'key': 'MEDICAL TEAM',
           'values': doctors});
@@ -392,6 +430,18 @@
 
         navMainDropdown = navMainDropdownTmpl({'key': '24 HOURS HEALTH CARE SERVICES', 'values': services});
         $('#services_dropdown').html(navMainDropdown);
+
+        $(document).on('click', '.directorsTag', function(){
+          var id = $(this).attr('id');
+          window.open("/directors/#"+ id);
+        });
+
+        $(document).on('click', '.doctorsTag', function(){
+          var id = $(this).attr('id');
+          if(id == 'satheesh'){
+            window.open("/doctors/#"+ id);
+          }
+        });
 
       });
     </script>
