@@ -394,7 +394,7 @@
             {'name': 'Dr.M.KARTHIKEYAN', 'deg': 'M.D (Anes)', 'desg': 'ANAESTHETIST', 'img':'../assets/images/DoctorImages/Dr.karthikeyan.jpg', 'tag': 'karthikeyan'},
             {'name': 'Dr. SURESH', 'deg': 'M.S', 'desg': 'ORTHOPAEDIC SURGEON', 'img':'../assets/images/DoctorImages/Dr.Suresh.JPG', 'tag': 'suresh'},
             {'name': 'Dr.S. PRABHAKAR', 'deg': 'M.S., M.CH., D.N.B.,', 'desg': 'UROLOGIST', 'img':'../assets/images/DoctorImages/Dr.S.Prabhakaran.jpeg', 'tag': 'prabhakar'},
-            {'name': 'Dr. VINOTH', 'deg': 'M.D., M.E.M.,', 'desg': 'EMERGENCY CRITICAL', 'img':'../assets/images/DoctorImages/Dr.Vinod.jpeg', 'tag': 'vinoth'},
+            {'name': 'Dr. VINOTH', 'deg': 'M.D., M.E.M.,', 'desg': 'EMERGENCY PHYSICIAN', 'img':'../assets/images/DoctorImages/Dr.Vinod.jpeg', 'tag': 'vinoth'},
             {'name': 'Dr.R.DINESH PRABHU', 'deg': 'M.D., Resp. Med.,', 'desg': 'CONSULTANT PULMONOLOGIST', 'img':'../assets/images/DoctorImages/DR.DINESH_PRABHU.jpg', 'tag': 'dinesh'}];
 
         var departments = ['ANESTHESIA', 'CARDIOLOGY', 'CRITICAL CARE', 'DENTAL', 'DIABETOLOGY', 'GASTRO ENTEROLOGY', 'GASTRO INTESTINAL SURGERY', 'GENERAL MEDICINE', 'OBSTETRIC AND GYNACOLOGY', 'ORTHOPAEDIC MEDICINE', 'PAEDIATRIC', 'SONOLOGY', 'UROLOGY', 'SURGICAL ONCOLOGY'];
@@ -440,7 +440,7 @@
 
         $(document).on('click', '.doctorsTag', function(){
           var id = $(this).attr('id');
-          if(id == 'satheesh'){
+          if(_.contains(['satheesh', 'prabhakar', 'vinoth'], id)){
             window.open("/doctors/#"+ id);
           }
         });

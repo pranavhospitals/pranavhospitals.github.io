@@ -219,36 +219,6 @@
       </div>
     </div>
 
-    <div class="container doctorsCont p-5" id="satheesh">
-      <div class="row">
-        <div class="col-3">
-          <img class="directors_pic" src="../assets/images/DoctorImages/Dr.Sathish.jpeg" />
-        </div>
-        <div class="col-9 p-0">
-          <div class="row mb-2">
-            <div class="col-12 d_name mb-2">Dr.J.SATHEESH.,</div>
-            <div class="col-12 d_black mb-2"> M.S., D.N.B., M.CH.,</div>
-            <div class="col-12 d_black mb-1">SURGICAL GASTROENTEROLOGIST</div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-12 italic">
-              The department of surgical Gastroenterology is headed by <b>Dr. J. SATHEESH, M.S., DNB., M.Ch., (Gastro) (SGE)</b> with over 15 years of experience in the field. He has been instrumental in bringing ethical and affordable care to the patients from Salem and neighboring districts.
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-12 italic">
-              After topping the state entrance examinations he did his MCH (SGE) from the renowned institute of Surgical Gastroenterology and liver   transplant Stanley medical college Chennai.
-            </div>
-          </div>
-          <div class="row mb-2">
-            <div class="col-12 italic">
-              His field of interest includes GI bleed, advanced & interventional endoscopy.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- <div class="row location_cont m-3" id="contact_us_cont">
       <div class="col-2 text-center">
         <div class="card my-3 rounded-0">
@@ -389,7 +359,7 @@
             {'name': 'Dr.M.KARTHIKEYAN', 'deg': 'M.D (Anes)', 'desg': 'ANAESTHETIST', 'img':'../assets/images/DoctorImages/Dr.karthikeyan.jpg', 'tag': 'karthikeyan'},
             {'name': 'Dr. SURESH', 'deg': 'M.S', 'desg': 'ORTHOPAEDIC SURGEON', 'img':'../assets/images/DoctorImages/Dr.Suresh.JPG', 'tag': 'suresh'},
             {'name': 'Dr.S. PRABHAKAR', 'deg': 'M.S., M.CH., D.N.B.,', 'desg': 'UROLOGIST', 'img':'../assets/images/DoctorImages/Dr.S.Prabhakaran.jpeg', 'tag': 'prabhakar'},
-            {'name': 'Dr. VINOTH', 'deg': 'M.D., M.E.M.,', 'desg': 'EMERGENCY CRITICAL', 'img':'../assets/images/DoctorImages/Dr.Vinod.jpeg', 'tag': 'vinoth'},
+            {'name': 'Dr. VINOTH', 'deg': 'M.D., M.E.M.,', 'desg': 'EMERGENCY PHYSICIAN', 'img':'../assets/images/DoctorImages/Dr.Vinod.jpeg', 'tag': 'vinoth'},
             {'name': 'Dr.R.DINESH PRABHU', 'deg': 'M.D., Resp. Med.,', 'desg': 'CONSULTANT PULMONOLOGIST', 'img':'../assets/images/DoctorImages/DR.DINESH_PRABHU.jpg', 'tag': 'dinesh'}];
 
         var departments = ['ANESTHESIA', 'CARDIOLOGY', 'CRITICAL CARE', 'DENTAL', 'DIABETOLOGY', 'GASTRO ENTEROLOGY', 'GASTRO INTESTINAL SURGERY', 'GENERAL MEDICINE', 'OBSTETRIC AND GYNACOLOGY', 'ORTHOPAEDIC MEDICINE', 'PAEDIATRIC', 'SONOLOGY', 'UROLOGY', 'SURGICAL ONCOLOGY'];
@@ -425,7 +395,7 @@
 
         $(document).on('click', '.doctorsTag', function(){
           var _id = $(this).attr('id');
-          if(_id == 'satheesh'){
+          if(_.contains(['satheesh', 'prabhakar', 'vinoth'], _id)){
             window.open("/doctors/#"+ _id);
           }
         });
